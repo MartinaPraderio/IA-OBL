@@ -14,7 +14,7 @@ class ExpectiMaxAgent(Agent):
 
     def expecti_max(self, board_state: GameBoard, player = True, max_depth = 4):
         if board_state.get_available_moves() == [] or board_state.get_max_tile() >= 2048 or max_depth == 0:
-            return self.heuristic_utility(board_state)
+            return self.heuristic_utility(board_state), None
 
         value = 0
         selected_action = None
