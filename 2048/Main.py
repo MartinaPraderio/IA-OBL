@@ -21,6 +21,7 @@ if __name__ == '__main__':
     start = datetime.now()
     while not done:
         action = agent.play(board)
+        available_moves = board.get_available_moves()
         print('Next Action: "{}"'.format(
             int_to_string[action]), ',   Move: {}'.format(moves))
         done = board.play(action)
