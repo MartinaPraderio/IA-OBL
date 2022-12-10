@@ -10,9 +10,9 @@ class ExpectiMaxAgent(Agent):
         return self.expecti_max(board)[1]
 
     def heuristic_utility(self, board: GameBoard)->int:
-        return 0 #Retorna un numero que calculamos en base al board con la heuristica q elijamos
+        return len(board.get_available_cells()) * 10000
 
-    def expecti_max(self, board_state: GameBoard, player = True, max_depth = 4):
+    def expecti_max(self, board_state: GameBoard, player = True, max_depth = 4): # retorna (valor, accion)
         if board_state.get_available_moves() == [] or board_state.get_max_tile() >= 2048 or max_depth == 0:
             return self.heuristic_utility(board_state), None
 

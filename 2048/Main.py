@@ -2,6 +2,7 @@ from datetime import datetime
 from GameBoard import GameBoard
 from Agent import Agent
 from Random_Agent import RandomAgent
+from ExpectiMax_Agent import ExpectiMaxAgent
 
 def check_win(board: GameBoard):
     return board.get_max_tile() >= 2048
@@ -12,7 +13,7 @@ int_to_string = ['UP', 'DOWN', 'LEFT', 'RIGHT']
 if __name__ == '__main__':
     agent: Agent
     board: GameBoard
-    agent = RandomAgent()
+    agent = ExpectiMaxAgent()
     board = GameBoard()
     done = False
     moves = 0
